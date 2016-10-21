@@ -15,7 +15,6 @@ var bio = {
     "welcomeMsg" : "Get ready to be impressed like never before!!",
     "skills" : ["HTML5", "CSS3", "JS"]
 };
-
 var work = {
     "jobs" : [
     {
@@ -156,9 +155,10 @@ function InName(Name) {
     return finalName;
 };
 
+
 bio.display();
 work.display();
 projects.display();
 education.display();
-$("#main").append(googleMap);
+$("#mapDiv").append(googleMap);
 $("#main").append(internationalizeButton);
