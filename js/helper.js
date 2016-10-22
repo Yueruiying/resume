@@ -15,45 +15,46 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span id="role">%data%</span><hr>';
 
-var HTMLmobile = '<li class="flex-item"><span class="orange-text"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text"><i class="fa fa-location-arrow fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item contact"><span class="orange-text"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item contact"><span class="orange-text"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item contact"><span class="orange-text"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item contact"><span class="orange-text"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item contact"><span class="orange-text"><i class="fa fa-location-arrow fa-2x" aria-hidden="true"></i></span><span class="black-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<h3 class="welcome-message">%data%</h3>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skill\'s </h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3">My Skill\'s </h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-logo">%data%</li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkEmployer = '<a class="ext_links" href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a class = "ext_links" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" height=50px width=100px>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#"></i>%data%';
+var HTMLschoolName = '<a class="ext_links" href="#"></i>%data%';
 var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 var HTMLonlineClasses = '<h3 class="education-entry"><br/>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a class="ext_links" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<button class="blc_btn" id="internationalizeButton">Internationalize</button>';
+var gototop = '<button class="blc_btn" id="tp"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></button>';
 var googleMap = '<div id="map" class="gray"></div>';
 
 
