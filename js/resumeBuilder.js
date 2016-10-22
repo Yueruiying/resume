@@ -1,27 +1,36 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
+var html5 ='<img class="logo" src="./images/logos/logo-html5-k.svg">'
+var css3 = '<img class="logo" src="./images/logos/css-3.svg">'
+var js = '<img class="logo" src="./images/logos/logo-javascript.svg">'
+var jquery = '<img class="logo" src="./images/logos/logo-jquery.svg">'
+var bootstrap = '<img class="logo" src="./images/logos/logo-bootstrap.svg">'
+var git = '<img class="logo" src="./images/logos/logo-git.svg">'
+var npm = '<img class="logo" src="./images/logos/logo-npm.svg">'
+var grunt = '<img class="logo" src="./images/logos/logo-grunt.svg">'
+
+
 var bio = {
     "name" : "Sunil Behera",
     "role" : "Web Developer",
     "contacts" : {
         "mobile": "+91 94375 95871",
-        "email" : "behera.sunil.k@gmail.com",
+        "email" : "sunil.behera@outlook.com",
         "twitter" : "_sunilbehera",
         "github" :"beheraSunil",
+        "linkedin" : "beherasunil",
         "location" : "India",
     },
     "bioPic" : "./images/fry.jpg",
     "welcomeMsg" : "Get ready to be impressed like never before!!",
-    "skills" : ["HTML5", "CSS3", "JS"]
+    "skills" : [html5,css3,js,jquery,bootstrap,git,npm,grunt]
 };
+
 var work = {
     "jobs" : [
     {
         "workEmployer" : "Upwork",
         "workTitle":"Freelance Developer",
         "workDates" : "2016 - Present",
-        "location" : "India",
+        "location" : "Berhampur",
         "workDescription": "I work on various projects with different clients and provide technical solutions.",
     }
     ]
@@ -40,7 +49,7 @@ var education = {
         "schoolName" : "Kendriya Vidalaya",
         "schoolDegree" : "High School",
         "schoolDates" : "2012",
-        "location" : "India",
+        "location" : "Panvel,Navi Mumbai",
         "schoolMajor" : "Intermediate Science, Mathematics & Computer Science",
     }
     ],
@@ -88,13 +97,13 @@ bio.display=function()
     $("#header").append(HTMLskillsStart);
     for(skill in bio.skills)
     {
-        $("#skills-h3").append(HTMLskills.replace("%data%",bio.skills[skill]));
+        $("#skills").append(HTMLskills.replace("%data%",bio.skills[skill]));
     }
 }
 
 work.display=function()
 {
-    for(job in work.jobs)
+    for(job=0;job<work.jobs.length;job++)
     {
         var formattedWorkEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].workEmployer);
         var formattedWorkTitle = HTMLworkTitle.replace("%data%",work.jobs[job].workTitle);
@@ -113,7 +122,7 @@ work.display=function()
 
 education.display=function()
 {
-    for(school in education.schools)
+    for(school=0;school<education.schools.length;school++)
     {
         $("#education").append(HTMLschoolStart);
 
@@ -123,13 +132,21 @@ education.display=function()
         $(".education-entry:last").append(HTMLschoolLocation.replace("%data%",education.schools[school].location));
         $(".education-entry:last").append(HTMLschoolMajor.replace("%data%",education.schools[school].schoolMajor));
     }
+    $("#education").append(HTMLonlineClasses);
+    for(course=0;course<education.courses.length;course++)
+    {
+        $("#education").append(HTMLschoolStart);
+        $(".education-entry:last").append(HTMLonlineTitle.replace("%data%",education.courses[course].onlineTitle) + HTMLonlineSchool.replace("%data%",education.courses[course].onlineSchool));
 
+        $(".education-entry:last").append(HTMLonlineDates.replace("%data%",education.courses[course].onlineDates));
+        $(".education-entry:last").append(HTMLonlineURL.replace("%data%",education.courses[course].onlineURL));
+    }
 
 }
 
 projects.display = function()
 {
-    for(project in projects.allProjects)
+    for(project=0;project<projects.allProjects.length;project++)
     {
         $("#projects").append(HTMLprojectStart);
         $(".project-entry:last").append(HTMLprojectTitle.replace("%data%",projects.allProjects[project].projectTitle));
@@ -155,10 +172,53 @@ function InName(Name) {
     return finalName;
 };
 
-
+var contactLink = function()
+{
+    var tw = $("li").get(2)
+    $( tw ).click(function() {
+    window.open('http://twitter.com/'+$(this).text(),"_blank");
+    });
+    $( tw ).hover(function() {
+    $(this).css('cursor','pointer');
+    });
+    var gt = $("li").get(3)
+    $( gt ).click(function() {
+    window.open('http://github.com/'+$(this).text(),"_blank");
+    });
+    $( gt ).hover(function() {
+    $(this).css('cursor','pointer');
+    });
+    var mp = $("li").get(4)
+    $( mp ).click(function() {
+    window.open('https://www.google.co.in/maps/place/'+$(this).text(),"_blank");
+    });
+    $( mp ).hover(function() {
+    $(this).css('cursor','pointer');
+    });
+}
+var pop = function(){
+    //var el =
+    $(".gray").hover(function(){
+        $(this).css("box-shadow","0px 13px 23px 1px rgba(115,101,115,1)")
+    });
+        $(".gray").mouseleave(function(){
+        $(this).css("box-shadow","0px 12px 15px 1px rgba(170,175,176,1)")
+    });
+}
+var connect = function(){
+    $("#lets-connect").click(function(){
+        window.open('https://in.linkedin.com/in/'+bio.contacts.linkedin,"_blank");
+    });
+    $("#lets-connect").hover(function(){
+        $(this).css('cursor','pointer');
+    });
+}
+$("#mapDiv").append(googleMap);
+$("#main").append(internationalizeButton);
 bio.display();
 work.display();
 projects.display();
 education.display();
-$("#mapDiv").append(googleMap);
-$("#main").append(internationalizeButton);
+contactLink();
+pop();
+connect();
