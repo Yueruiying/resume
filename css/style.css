@@ -108,7 +108,6 @@ em {
     font-size: 9em;
     color: white;
     text-align: center;
-    /*color: #000000;*/
     font-weight: lighter;
 }
 
@@ -255,6 +254,7 @@ span {
     border-top-color: #1c42ff;
     background: #1c42ff;
 }
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -265,7 +265,7 @@ span {
 
 @media only screen and (max-width: 900px) {
     .biopic {
-        width: 175px;
+        width: 10%;
     };
 }
 
@@ -275,11 +275,11 @@ span {
     }
 
     .biopic {
-        width: 150px;
+        width: 10%;
     }
 
     .welcome-message {
-        display: none;
+        font-size: 2em;
     };
 }
 
